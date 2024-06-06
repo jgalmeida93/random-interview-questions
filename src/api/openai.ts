@@ -1,7 +1,12 @@
+interface QuestionsAndAnswersArrayProps {
+  question: string;
+  answer: string;
+}
+
 export const generateQuestions = async (
   technology: string,
   language: string
-): Promise<string[]> => {
+): Promise<QuestionsAndAnswersArrayProps[]> => {
   const response = await fetch("http://localhost:3001/api/questions", {
     method: "POST",
     headers: {

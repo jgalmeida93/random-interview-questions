@@ -24,6 +24,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "public/locales", "src/i18n.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

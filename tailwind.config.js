@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
+import { nextui } from "@nextui-org/react";
 import tailwindAnimate from "tailwindcss-animate";
 
 export default {
@@ -9,6 +10,7 @@ export default {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   prefix: "",
   theme: {
@@ -29,14 +31,23 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "cursor-blink": {
+          "0%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "cursor-blink": "cursor-blink 1.5s steps(2) infinite",
       },
       backgroundImage: {
         "radial-bg":
-          "radial-gradient(circle, rgba(48,39,69,1) 0%, rgba(22,22,22,1) 60%)",
+          "radial-gradient(circle, rgba(17,15,22,1) 0%, rgba(8,7,11,1) 70%)",
         texture: "url('src/assets/pattern.png')",
       },
       backgroundColor: {
@@ -45,5 +56,5 @@ export default {
       },
     },
   },
-  plugins: [tailwindAnimate],
+  plugins: [tailwindAnimate, nextui()],
 };
